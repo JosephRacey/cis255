@@ -1,0 +1,80 @@
+body{max-width: 1000px;
+	 margin: auto;
+	 background-color: gray;
+	 color: white;
+	 font-family: "Arial";
+	}
+
+div{color: white;}
+	 
+h1{font-family: sans-serif;
+   position: relative;
+   bottom: 10px;
+  }
+   
+h2{font-family: sans-serif;
+   position: relative;
+   bottom: 20px;
+  }
+
+button{position:absolute;
+		right: 10px;
+		top: 10px;
+		width: 150px;
+		height: 40px;
+		border: none;
+		
+		background-color: black;
+		color: white;
+		transition-property: background-color;
+		transition-duration: 0.3s;
+		transition-timing-function: linear;
+		transition-delay: 0s;
+       }
+
+button:hover{background-color: #ffffff;
+			 color: black;
+			}
+
+.boximageright{width: 150px;
+			   height: 150px;
+			   float: right;
+			   margin: 0.5em;
+	          }
+ 
+.boximageleft{width: 150px;
+              height: 150px;
+			  float: left;
+			  margin: 0.5em;
+	         }
+ 
+div.box{border-style: solid;
+		border-width: 3px;
+		color: black;
+		background-color: white;	 
+		overflow: hidden;
+       }
+ 
+#container{position: relative;}
+ 
+@media only screen and (min-width: 1000px) 
+{
+.main{margin-left: 34%;
+	  Margin-right: 34%;
+     }
+ 
+aside{
+	 position: absolute;
+	 width: 33%;
+	 top: 0;
+	 right: 0;
+     }
+ 
+nav{position: absolute;
+	width: 33%;
+	left: 0;
+	top: 0;
+   }
+}
+
+.screenshot{width: 100%;}

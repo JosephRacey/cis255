@@ -53,6 +53,7 @@ div.box{border-style: solid;
 		color: black;
 		background-color: white;	 
 		overflow: hidden;
+		box-shadow: 5px 5px #404040;
        }
  
 #container{position: relative;}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html  ng-app="app1">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="Assignment7.js"></script>
+<body>
+
+<div ng-controller='ctrl1'>
+
+<span>Farentheight to Celcius</span> 
+<br>
+Farenheit: <input type="text" ng-model="farenheit">
+<br>
+<button ng-click="updateTemp()">Calculate</button>
+<br>
+
+{{calculation}}
+ 
+<br><br>
+ 
+Quadradic Equation Solver
+
+<br>
+
+A: <input type="text" ng-change="quadradic()" ng-model="a"/><br>
+B: <input type="text" ng-change="quadradic()" ng-model="b"/><br>
+C: <input type="text" ng-change="quadradic()" ng-model="c"/><br>
+
+<br>
+
+Solution 1: = {{solOne}}<br>
+Solution 2: = {{solTwo}}<br>
+
+<br><br>
+
+Cubic Equation Solver<br>
+A: <input type="text" ng-change="cubic()" ng-model="cubicA"/><br>
+B: <input type="text" ng-change="cubic()" ng-model="cubicB"/><br>
+C: <input type="text" ng-change="cubic()" ng-model="cubicC"/><br>
+D: <input type="text" ng-change="cubic()" ng-model="cubicD"/><br>
+
+<br>
+
+Solution 1: = {{cubicOne}}<br>
+Solution 2: = {{cubicTwo}}<br>
+Solution 3: = {{cubicThree}}<br>
+Solution 1 (imaginary): = {{cubicOneImag}}<br>
+Solution 2 (imaginary): = {{cubicTwoImag}}<br>
+Solution 3 (imaginary): = {{cubicThreeImag}}<br>
+
+</div>
+
+</body>
+</html>

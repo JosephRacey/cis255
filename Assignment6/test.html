@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+  <body>
+
+    <h1>The XMLHttpRequest Object</h1>
+
+    <p id="demo">Let AJAX change this text.</p>
+
+    <button type="button" onclick="loadDoc();">Load Content (Do this before sorting)</button>
+    <button type="button" onclick="showByRoom(obj, newArray)">Change Content (Show by room)</button>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+      var newArray = [];
+      var obj;
+      var rt;
+
+      rt = " ";
+
+      function loadDoc() {
+		$(document).ready(function(){
+			$("button").click(function(){
+				$.ajax({url: "junk.txt", success: function(result){
+					$("#div1").html(result);
+					var obj = jQuery.parseJSON(result);
+				}});
+			});
+		});
+      }
+
+      function showDoc(obj) {
+        xx = "";
+        for (var i = 0; i < obj.courses.length; i++)
+          xx = xx + obj.courses[i].prefix + " " +
+          obj.courses[i].courseNumber + " " +
+          obj.courses[i].meetingTimes[0].building + " " +
+          obj.courses[i].meetingTimes[0].room + " <br>";
+        document.getElementById("demo").innerHTML = xx;
+      }
+
+      function sortByRoom(obj, newArray) {
+
+        newArray.courses = obj.courses.slice();
+
+        newArray.courses.sort(function(a, b) {
+
+          if (a.meetingTimes[0].room > b.meetingTimes[0].room) {
+            return -1;
+          }
+          if (b.meetingTimes[0].room > a.meetingTimes[0].room) {
+            return 1;
+          }
+          return 0;
+        });
+      }
+
+      function showByRoom(obj, newArray) {
+        sortByRoom(obj, newArray)
+		showDoc(newArray)
+      }
+
+    </script>
+
+  </body>
+
+</html>
